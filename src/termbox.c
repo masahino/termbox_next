@@ -723,6 +723,11 @@ static void send_attr(uint32_t fg, uint32_t bg)
 			memstream_puts(&write_buffer, funcs[T_REVERSE]);
 		}
 
+		if (fg &TB_ITALIC)
+		{
+			memstream_puts(&write_buffer, funcs[T_ITALIC]);
+		}
+
 		write_sgr(fgcol, bgcol);
 
 		lastfg = fg;
